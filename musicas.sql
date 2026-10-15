@@ -13,7 +13,7 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 titulo VARCHAR(100) NOT NULL,
 ano_lancamento INT NOT NULL,
 artista_id INT NOT NULL,
-FOREIGN KEY (artista_id) REFERENCES artistas(id)
+FOREIGN KEY (artista_id) REFERENCES artistas(id) ON DELETE CASCADE
 );
 
 CREATE TABLE musicas (
@@ -21,7 +21,7 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 titulo VARCHAR(100) NOT NULL,
 duracao VARCHAR(10) NOT NULL,
 album_id INT NOT NULL,
-FOREIGN KEY (album_id) REFERENCES albuns(id)
+FOREIGN KEY (album_id) REFERENCES albuns(id) ON DELETE CASCADE
 );
 
 INSERT INTO artistas (nome, genero, pais) VALUES
@@ -45,3 +45,4 @@ INSERT INTO musicas (titulo, duracao, album_id) VALUES
 SELECT * FROM artistas;
 SELECT * FROM albuns;
 SELECT * FROM musicas;
+
